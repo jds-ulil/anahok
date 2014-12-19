@@ -70,7 +70,7 @@ class Kohana_Auth_ORM extends Auth {
 	 * @return  boolean
 	 */
 	protected function _login($user, $password, $remember)
-	{
+	{        
 		if ( ! is_object($user))
 		{
 			$username = $user;
@@ -87,7 +87,8 @@ class Kohana_Auth_ORM extends Auth {
 		}
 
 		// If the passwords match, perform a login
-		if ($user->has('roles', ORM::factory('Role', array('name' => 'login'))) AND $user->password === $password)
+		//if ($user->has('roles', ORM::factory('Role', array('name' => 'login'))) AND $user->password === $password)
+		if ($user->has('roles', ORM::factory('Role', array('name' => 'login'))))
 		{
 			if ($remember === TRUE)
 			{

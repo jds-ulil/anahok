@@ -85,10 +85,9 @@ abstract class Kohana_Auth {
 	 * @return  boolean
 	 */
 	public function login($username, $password, $remember = FALSE)
-	{
+	{              
 		if (empty($password))
-			return FALSE;
-
+			return FALSE;                
 		return $this->_login($username, $password, $remember);
 	}
 

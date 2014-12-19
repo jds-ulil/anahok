@@ -56,12 +56,13 @@ class Twitterbootstrap {
 						'collapse.js',
 						'dropdown.js',
 						'modal.js',
-						'npm.js',
 						'popover.js',
 						'scrollspy.js',
-						'tab.js',						
+						'tab.js',		
+                        'tooltip.js',
 						'transition.js',
-						'tooltip.js',);
+                        //'npm.js'
+                        );
 
 		return Twitterbootstrap::_process($files, $list, 'js');
 
@@ -71,6 +72,9 @@ class Twitterbootstrap {
 		foreach(Twitterbootstrap::js($list) as $script){
 			echo HTML::script($script)."\n";
 		}
+	}
+	public static function print_jsPer($name=''){		
+			echo HTML::script('/assets/bootstrap/js/'.$name.'.js')."\n";		
 	}
 
 }

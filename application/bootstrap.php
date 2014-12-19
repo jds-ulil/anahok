@@ -125,9 +125,9 @@ Kohana::modules(array(
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
         'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-         'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	// 'unittest'   => MODPATH.'unittest',   // Unit testing
+	 'minion'     => MODPATH.'minion',     // CLI Tasks
+     'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
         'twitter' => MODPATH.'twitter-bootstrap',
 	));
@@ -141,5 +141,11 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
-	
+
+Route::set('special_rute', '(<controller>(/<directory>(/id)))')
+    ->defaults(array(
+        'controller'  => 'special_rute',
+        'directory' => 'editable',        
+    ));
+
 Cookie::$salt = 'foobar';
